@@ -1,0 +1,95 @@
+[[input_genome_assemblies]]
+fasta = "Ara_halleri.fa.fa"
+genome_id = "genome_1"
+species = "spec_1"
+genome_size = 0
+
+[[input_genome_assemblies]]
+fasta = "Ara_thaliana.fa.fa"
+genome_id = "genome_2"
+species = "spec_2"
+genome_size = 0
+
+[[ltr_harvest_parameters]]
+index = "genome_1"
+out = "out_1"
+outinner = "outinner_1"
+gff3 = "gff3_1"
+maxlenltr = "1000"
+
+[[ltr_harvest_parameters]]
+index = "genome_2"
+out = "out_2"
+outinner = "outinner_2"
+gff3 = "gff3_2"
+maxlenltr = "1200"
+
+[general]
+HOME_DIR = "/home/cobrapitz/Desktop/test_REsco/REsco"
+GENOME_TOOLS_PATH = "/usr/bin/gt"
+delete_existing = false
+suffixerator_command = "{GENOME_TOOLS_PATH} suffixerator -dna -tis -suf -lcp -des -sds -lossless  -v -db {INPUT_FASTA} -indexname {INDEX_NAME}"
+ltrharvest_command = "{GENOME_TOOLS_PATH} ltrharvest"
+
+[suffixerator]
+default_part = "-dna -tis -suf -lcp -des -sds -lossless  -v"
+cl = "{GENOME_TOOLS_PATH} suffixerator -dna -tis -suf -lcp -des -sds -lossless  -v -db {LTRHARVEST_INPUT_FASTA_FP} -indexname {SUFFIXERATOR_INDEX}"
+indexname = []
+suffixerator_path = ""
+
+[tools.ltrharvest]
+index = "undefined"
+range = "0 0"
+seed = "30"
+minlenltr = "100"
+maxlenltr = "1000"
+mindistltr = "1000"
+maxdistltr = "15000"
+similar = "85.00"
+mintsd = "4"
+maxtsd = "20"
+motif = "undefined"
+motifmis = "4"
+vic = "60"
+overlaps = "best"
+xdrop = "5"
+mat = "2"
+mis = "-2"
+ins = "-3"
+del = "-3"
+v = "no"
+tabout = "yes"
+seqids = "no"
+md5 = "no"
+longoutput = "no"
+out = "undefined"
+outinner = "undefined"
+gff3 = "undefined"
+
+[tools.suffixerator]
+ssp = "yes"
+des = "yes"
+sds = "yes"
+md5 = "yes"
+clipdesc = "no"
+sat = "undefined"
+dna = "no"
+protein = "no"
+indexname = "undefined"
+db = "NO_ARGS"
+smap = "undefined"
+lossless = "no"
+mirrored = "no"
+pl = "0"
+dc = "0"
+spmopt = "0"
+memlimit = "undefined"
+kys = "nosort"
+dir = "fwd"
+suf = "no"
+lcp = "no"
+bwt = "no"
+bck = "no"
+v = "no"
+showprogress = "no"
+ii = "undefined"
